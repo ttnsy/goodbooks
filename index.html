@@ -15,21 +15,24 @@
       <div class="search-bar">
         <div class="dropdown">
           <div id="drop-text" class="dropdown-text">
-            <span id="span"">Title</span>
+            <span id="span">Title</span>
             <i id="icon" class="fa-solid fa-chevron-down"></i>
           </div>
           <ul id="list" class="dropdown-list">
             <li class="dropdown-list-item">Title</li>
-            <li class="dropdown-list-item">Author</li>
+            <li class="dropdown-list-item">Authors</li>
             <li class="dropdown-list-item">Categories</li>
             <li class="dropdown-list-item">Genre</li>
           </ul>
         </div>
 
-        <div class="search-box">
-          <input type="text" id="search-input" placeholder="Search by Title">
+        <form class="search-box">
+          <input type="text" onfocus="showResult()" id="search-input" placeholder="Search by Title">
           <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+        </form>
+        <form class="search-result">
+
+        </form>
       </div>
 
       <form class="user-buttons">
@@ -57,12 +60,15 @@
     </main>
     <footer>
       <div class="data">
-        <h5>Data Source</h5>
-        <p>The data is sourced from an API built with <a href="https://dash.appbackend.io/p/Ikan0s2jpjeCoUBl/hZKs8Bt1xP1D", target="_blank">dash.appbackend.io</a>.
-          API data is using a sampled data from <a href="https://www.kaggle.com/datasets/pathompongmuangthong/chaloklum-bookshop-dataset" target="_blank">Chaloklum Bookshop Dataset</a> in Kaggle.</p>
+        <h5>Citations</h5>
+        <div class="data-text">
+          <p>The data is sourced from an API built with <a href="https://dash.appbackend.io/p/Ikan0s2jpjeCoUBl/hZKs8Bt1xP1D", target="_blank">dash.appbackend.io</a>.
+            API data is using a sampled data from <a href="https://www.kaggle.com/datasets/pathompongmuangthong/chaloklum-bookshop-dataset" target="_blank">Chaloklum Bookshop Dataset</a> in Kaggle.</p>
+          <p>Illustration for hero image authored by <a href="https://www.freepik.com/author/pikisuperstar">@pikisuperstar</a> </p>
+        </div>
       </div>
       <div class="contacts">
-        <h5>Find me on</h5>
+        <h5>Contacts</h5>
         <ul>
           <li>
             <a href="https://github.com/ttnsy", target="_blank">
@@ -90,6 +96,5 @@
       </div>
     </footer>
     <script src="main.js"></script>
-    <script src="searchBox.js"></script>
   </body>
 </html>

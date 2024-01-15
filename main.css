@@ -215,6 +215,8 @@ section {
 
 footer {
   display: flex;
+  position: absolute;
+  bottom: 1;
   margin-top: 6rem;
   color: white;
   background-color: var(--dark-purple);
@@ -237,7 +239,6 @@ footer h5 {
 }
 
 footer a {
-  text-decoration: none;
   color: var(--wheat);
   font-weight: 600;
 }
@@ -256,8 +257,15 @@ footer .contacts {
 }
 
 footer .data {
+  display: flex;
+  flex-direction: column;
   text-align: right;
-  width: 30%;
+  width: 40%;
+}
+
+footer .data-text {
+  display: flex;
+  gap: 2rem;
 }
 
 footer ul {

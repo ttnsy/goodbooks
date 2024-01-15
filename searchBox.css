@@ -1,5 +1,6 @@
 .search-bar {
   display: flex;
+  position: relative;
   align-items: center;
   min-width: 50%;
   border-radius: 50px;
@@ -67,4 +68,30 @@
   color: white;
   padding: 1rem 1.5rem;
   font-size: 0.8rem;
+}
+
+.search-result {
+  position: absolute;
+  top: 4rem;
+  left: 8rem;
+  font-size: 0.8rem;
+  max-height: 0;
+  line-height: 2;
+  background-color: white;
+  width: 80%;
+  padding: 0.5rem 1rem;
+  max-height: 400px;
+  border-radius: 0 0 20px 20px;
+  overflow: overlay;
+  display: none;
+}
+
+.search-result > ul > li {
+  transition: 0.2s ease;
+}
+
+.search-result > ul > li:hover {
+  cursor: pointer;
+  margin-left: 0.3rem;
+  color: var(--purple);
 }
