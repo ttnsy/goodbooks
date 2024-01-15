@@ -1,0 +1,70 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  min-width: 50%;
+  border-radius: 50px;
+  border: 2px solid var(--light-purple);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  width: 100%;
+  color: var(--dark-purple);
+}
+
+.search-box input {
+  padding: 1rem;
+  width: 100%;
+  font-weight: 500;
+  border: 0;
+  outline: 0;
+}
+
+.dropdown {
+  position: relative;
+  width: 200px;
+  background-color: var(--dark-purple);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  width: 100%;
+  border-radius: 15px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+#list.show {
+  max-height: 300px;
+}
+
+.dropdown-list-item {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 1rem 0 1rem 1.5rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dropdown-list-item:hover {
+  margin-left: 0.3rem;
+  color: var(--purple);
+}
+
+.dropdown-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  color: white;
+  padding: 1rem 1.5rem;
+  font-size: 0.8rem;
+}

@@ -4,38 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoodBooks</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css" />
     <script src="https://kit.fontawesome.com/44df73a424.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
-      <nav>
-        <h1 class="title">GoodBooks</h1>
-        <div class="nav__buttons">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          <button>Categories</button>
-          <button>Genres</button>
-          <button><i class="fa-solid fa-pencil"></i> Write a review</button>
-          <button><i class="fa-regular fa-circle-user"></i></button>
+      <div class="logo">
+        <h1>GoodBooks</h1>
+      </div>
+      <div class="search-bar">
+        <div class="dropdown">
+          <div id="drop-text" class="dropdown-text">
+            <span id="span"">Title</span>
+            <i id="icon" class="fa-solid fa-chevron-down"></i>
+          </div>
+          <ul id="list" class="dropdown-list">
+            <li class="dropdown-list-item">Title</li>
+            <li class="dropdown-list-item">Author</li>
+            <li class="dropdown-list-item">Categories</li>
+            <li class="dropdown-list-item">Genre</li>
+          </ul>
         </div>
-      </nav>
-      <div class="header__text">
+
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search by Title">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+
+      <form class="user-buttons">
+        <button class="btn sign-up">Sign up</button>
+        <button class="btn">Sign in</button>
+      </form>
+    </header>
+    <section class="hero">
+      <div class="hero-text">
           <h2>Reviews and tips for books and more</h2>
           <p>Discover your next favorite books and engage with our growing community.</p>
-          <button>Explore reviews</button>
+          <button class="btn btn-hero">Explore reviews</button>
       </div>
       <img src="assets/hero.png" alt="">
-    </header>
+    </section>
     <main>
       <section>
-        <h3>Recently reviewed</h3>
+        <h3>Recently published</h3>
+        <div class="cards"></div>
       </section>
       <section>
-        <h3>Explore by categories</h3>
+        <h3>Explore what others reviews</h3>
       </section>
     </main>
     <footer>
     </footer>
-    <script src="index.js"></script>
+    <script src="main.js"></script>
+    <script src="searchBox.js"></script>
   </body>
 </html>
