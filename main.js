@@ -1,4 +1,4 @@
-async function getRecentlyReviewed(url) {
+async function getRecentlyPublished(url) {
   const response = await fetch(url);
   const { data } = await response.json();
 
@@ -14,19 +14,37 @@ async function getRecentlyReviewed(url) {
     titleElement.textContent = item.title;
     authorElement.textContent = item.authors;
 
-    console.log(item);
     cardElement.append(imageElement, titleElement, authorElement);
     document.querySelector(".cards").appendChild(cardElement);
   });
 }
 
-async function getUniqueCat(url) {
+async function getCategories(url) {
   const response = await fetch(url);
   const { data } = await response.json();
 
-  console.log(data);
+  const categories = [];
+  data.forEach((item) => {
+    if (item.categories !== "NA") {
+      categories.push(item.categories);
+    }
+  });
+  
+  const ulElement = document.createElement("ul");
+  const categoriesUnique = [... new Set(categories)];
+
+  categoriesUnique.forEach((category) => {
+    const liElement = document.createElement("li");
+    const liText = document.createTextNode(category);
+
+    liElement.appendChild(liText);
+    ulElement.appendChild(liElement);
+  });
+
+  document.querySelector(".tags").appendChild(ulElement);
 }
 
 url = "https://v1.appbackend.io/v1/rows/hZKs8Bt1xP1D";
-params = "sortBy=published_year&sortOrder=descending&limit=15";
-getRecentlyReviewed(`${url}/?${params}`);
+params = "sortBy=published_date&sortOrder=desc&limit=15";
+getRecentlyPublished(`${url}/?${params}`);
+getCategories(`${url}`);
