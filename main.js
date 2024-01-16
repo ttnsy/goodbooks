@@ -51,18 +51,18 @@ window.addEventListener("click", (e) => {
 });
 
 // Fetch Data
-function load(url) {
-  return new Promise(async function (resolve, reject) {
-    const res = await fetch(url);
-    resolve(res.json());
-  });
+async function load(url) {
+  const response = await fetch(url);
+  const json = await response.json();
+
+  return json;
 }
 
 function loadUniqueElements(key, parent) {
-  promise.then((x) => {
+  promise.then((json) => {
     const keys = [];
     let keysUnique = [];
-    x.data.forEach((item) => {
+    json.data.forEach((item) => {
       if (item[key] !== "NA") {
         keys.push(item[key]);
       }
